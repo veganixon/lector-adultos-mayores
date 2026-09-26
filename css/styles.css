@@ -1,69 +1,78 @@
-/* Fondo general suave con contraste accesible */
-.stApp {
-    background-color: #F4F6F9 !important;
+/* Fondo temático con textura de iconos de libros y lectura */
+.main {
+    background-color: #f0f4f8;
+    background-image: radial-gradient(#d0e1fd 1.5px, transparent 1.5px), radial-gradient(#d0e1fd 1.5px, #f0f4f8 1.5px);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
 }
 
-/* Título dinámico que escala según la pantalla */
+/* Banner de Título Llamativo */
+.header-banner {
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #1e88e5 100%);
+    color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(26, 35, 126, 0.25);
+    margin-bottom: 30px;
+    border: 2px solid #7986cb;
+}
+
 .titulo-principal {
-    color: #1A237E;
-    text-align: center;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    margin-top: 10px;
-    margin-bottom: 8px;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.5px;
+    color: #ffffff !important;
+    font-size: 36px !important;
+    font-weight: 900 !important;
+    margin: 0 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Subtítulo legible en celulares */
 .subtitulo {
-    color: #424242;
-    text-align: center;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    margin-bottom: 25px;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    line-height: 1.4;
+    color: #e8eaf6 !important;
+    font-size: 18px !important;
+    margin-top: 10px !important;
+    font-weight: 500;
 }
 
-/* Tarjeta moderna para resaltar el texto extraído */
-.caja-texto {
-    background-color: #E8F5E9;
-    border-left: 8px solid #2E7D32;
-    padding: 20px;
-    border-radius: 14px;
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
-    color: #1B5E20;
-    line-height: 1.6;
-    margin: 20px 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    word-break: break-word;
+/* Estilo para la zona de carga de archivos (File Uploader) */
+[data-testid="stFileUploader"] {
+    background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%);
+    border: 3px dashed #8e24aa !important;
+    border-radius: 18px !important;
+    padding: 20px !important;
+    box-shadow: 0 6px 15px rgba(142, 36, 170, 0.15) !important;
+    transition: all 0.3s ease;
 }
 
-/* Botón gigante adaptado a pulsaciones táctiles */
-.stButton > button {
-    width: 100% !important;
-    background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%) !important;
-    color: #FFFFFF !important;
-    font-size: clamp(1.1rem, 3vw, 1.3rem) !important;
-    font-weight: 700 !important;
-    border-radius: 12px !important;
-    padding: 14px 20px !important;
+[data-testid="stFileUploader"]:hover {
+    border-color: #ab47bc !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%);
+    box-shadow: 0 8px 20px rgba(142, 36, 170, 0.25) !important;
+}
+
+/* Personalizar el botón de subida/cámara dentro del uploader */
+[data-testid="stFileUploader"] button {
+    background: linear-gradient(90deg, #8e24aa, #d81b60) !important;
+    color: white !important;
     border: none !important;
-    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3) !important;
-    transition: all 0.2s ease-in-out !important;
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3) !important;
 }
 
-/* Efecto hover y tap */
-.stButton > button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(25, 118, 210, 0.4) !important;
-}
-
-/* Área de subida de archivos destacada */
-section[data-testid="stFileUploadDropzone"] {
-    background-color: #FFFFFF !important;
-    border: 2px dashed #1E88E5 !important;
-    border-radius: 16px !important;
-    padding: 25px 15px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+/* Caja Verde de Texto Detectado */
+.caja-texto {
+    background: #e8f5e9;
+    border-left: 8px solid #2e7d32;
+    padding: 22px;
+    border-radius: 14px;
+    font-size: 22px;
+    color: #1b5e20;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+    font-weight: 600;
 }
