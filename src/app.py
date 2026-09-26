@@ -9,8 +9,18 @@ import numpy as np
 # Configuración de la página
 st.set_page_config(page_title="Lector Portátil", page_icon="🔍", layout="centered")
 
-st.title("🔍 Lector Portátil")
-st.write("Toma o sube una foto de un texto para escucharlo en voz alta.")
+# Función para cargar estilos CSS desde la carpeta css
+def cargar_css(ruta_css):
+    if os.path.exists(ruta_css):
+        with open(ruta_css, "r", encoding="utf-8") as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Cargamos el archivo CSS de la carpeta css
+cargar_css("css/styles.css")
+
+# Encabezado accesible
+st.markdown('<div class="titulo-principal">🔍 Lector Portátil</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitulo">Toma o sube una foto de un texto para escucharlo en voz alta.</div>', unsafe_allow_html=True)
 
 # Cargar el modelo de EasyOCR (se guarda en caché para optimizar memoria)
 @st.cache_resource
@@ -41,7 +51,8 @@ if archivo_imagen is not None:
     if texto_extraido:
         st.success("¡Texto detectado con éxito!")
         st.subheader("Texto extraído:")
-        st.write(texto_extraido)
+        # Mostrar el texto usando la clase CSS de tarjeta resaltada
+        st.markdown(f'<div class="caja-texto">{texto_extraido}</div>', unsafe_allow_html=True)
         
         # Generar audio con archivo temporal seguro
         tts = gTTS(text=texto_extraido, lang='es')
