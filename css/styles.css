@@ -1,78 +1,97 @@
-/* Fondo temático con textura de iconos de libros y lectura */
-.main {
-    background-color: #f0f4f8;
-    background-image: radial-gradient(#d0e1fd 1.5px, transparent 1.5px), radial-gradient(#d0e1fd 1.5px, #f0f4f8 1.5px);
-    background-size: 60px 60px;
-    background-position: 0 0, 30px 30px;
+/* Importar fuente moderna y clara */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+/* Fondo general de la App usando la imagen con patrón de dibujos */
+.stApp {
+    background-image: url("https://i.ibb.co/L5T884C/fondo-patron-productos.jpg");
+    background-repeat: repeat;
+    background-size: 380px auto;
+    background-attachment: fixed;
+    background-color: #fdfbf7;
 }
 
-/* Banner de Título Llamativo */
+/* Banner del Título Principal */
 .header-banner {
-    background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #1e88e5 100%);
+    background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1e88e5 100%);
     color: #ffffff;
-    padding: 30px 20px;
+    padding: 28px 20px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(26, 35, 126, 0.25);
-    margin-bottom: 30px;
-    border: 2px solid #7986cb;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    margin-bottom: 25px;
+    border: 3px solid #ffffff;
 }
 
 .titulo-principal {
     color: #ffffff !important;
     font-size: 36px !important;
-    font-weight: 900 !important;
+    font-weight: 800 !important;
     margin: 0 !important;
+    font-family: 'Poppins', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .subtitulo {
     color: #e8eaf6 !important;
-    font-size: 18px !important;
+    font-size: 17px !important;
     margin-top: 10px !important;
     font-weight: 500;
 }
 
-/* Estilo para la zona de carga de archivos (File Uploader) */
+/* Etiqueta / Encabezado de la zona de carga */
+.seccion-subida {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Zona de subir archivo: BARRA VERDE CLARO */
 [data-testid="stFileUploader"] {
-    background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%);
-    border: 3px dashed #8e24aa !important;
-    border-radius: 18px !important;
+    background: #e8f5e9 !important; /* Fondo Verde Claro */
+    border: 3px dashed #4caf50 !important; /* Borde Verde */
+    border-radius: 20px !important;
     padding: 20px !important;
-    box-shadow: 0 6px 15px rgba(142, 36, 170, 0.15) !important;
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.2) !important;
     transition: all 0.3s ease;
 }
 
 [data-testid="stFileUploader"]:hover {
-    border-color: #ab47bc !important;
-    background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%);
-    box-shadow: 0 8px 20px rgba(142, 36, 170, 0.25) !important;
+    background: #dedbd2 !important;
+    background-color: #d7ccc8 !important;
+    background: #c8e6c9 !important; /* Verde un poco más vivo al pasar el cursor */
+    border-color: #2e7d32 !important;
 }
 
-/* Personalizar el botón de subida/cámara dentro del uploader */
+/* Botón Upload dentro de la barra verde */
 [data-testid="stFileUploader"] button {
-    background: linear-gradient(90deg, #8e24aa, #d81b60) !important;
-    color: white !important;
+    background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%) !important;
+    color: #ffffff !important;
     border: none !important;
     border-radius: 12px !important;
-    font-weight: bold !important;
+    font-weight: 700 !important;
     font-size: 16px !important;
-    padding: 10px 20px !important;
-    box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3) !important;
+    padding: 10px 22px !important;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3) !important;
 }
 
-/* Caja Verde de Texto Detectado */
+/* Texto dentro del cargador de archivos */
+[data-testid="stFileUploader"] section {
+    color: #2e7d32 !important;
+}
+
+/* Caja de Texto Detectado */
 .caja-texto {
-    background: #e8f5e9;
+    background: #ffffff;
     border-left: 8px solid #2e7d32;
-    padding: 22px;
-    border-radius: 14px;
+    padding: 20px;
+    border-radius: 15px;
     font-size: 22px;
     color: #1b5e20;
     line-height: 1.6;
     margin-top: 15px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     font-weight: 600;
 }
