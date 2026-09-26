@@ -1,4 +1,5 @@
 import os
+import base64
 import tempfile
 import streamlit as st
 from PIL import Image
@@ -14,7 +15,28 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Cargar CSS
+# Función para cargar la imagen de fondo en Base64
+def cargar_fondo_base64(ruta_imagen):
+    if os.path.exists(ruta_imagen):
+        with open(ruta_imagen, "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read()).decode()
+        css_fondo = f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpeg;base64,{encoded_string}");
+            background-repeat: repeat;
+            background-size: 500px auto;
+            background-attachment: fixed;
+            background-color: #fdfbf7;
+        }}
+        </style>
+        """
+        st.markdown(css_fondo, unsafe_allow_html=True)
+
+# Cargar imagen de fondo si existe en css/fondo.jpg
+cargar_fondo_base64("css/fondo.jpg")
+
+# Cargar CSS de estilos
 def cargar_css(ruta_css):
     if os.path.exists(ruta_css):
         with open(ruta_css, "r", encoding="utf-8") as f:
