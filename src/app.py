@@ -6,7 +6,7 @@ import numpy as np
 import easyocr
 from gtts import gTTS
 
-# 1. Configuración de la página
+# Configuración de página
 st.set_page_config(
     page_title="Lector Portátil",
     page_icon="🔍",
@@ -14,16 +14,15 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# 2. Cargar el archivo CSS externo desde css/styles.css
+# Cargar CSS
 def cargar_css(ruta_css):
     if os.path.exists(ruta_css):
         with open(ruta_css, "r", encoding="utf-8") as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# Cargamos los estilos de la carpeta css
 cargar_css("css/styles.css")
 
-# 3. Encabezado en formato Banner Llamativo
+# Banner del Título
 st.markdown("""
     <div class="header-banner">
         <div class="titulo-principal">📚 Lector Portátil 📖</div>
@@ -31,15 +30,15 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# 4. Cargar modelo EasyOCR (en caché para evitar sobreconsumo)
+# OCR
 @st.cache_resource
 def cargar_ocr():
     return easyocr.Reader(['es'], gpu=False)
 
 reader = cargar_ocr()
 
-# 5. Entrada de imagen con diseño destacado
-st.markdown("### 📷 Capturar o subir imagen")
+# Cargar imagen
+st.markdown('<div class="seccion-subida">📷 Capturar o subir imagen</div>', unsafe_allow_html=True)
 archivo_imagen = st.file_uploader("Selecciona una foto o usa la cámara", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
 
 if archivo_imagen is not None:
@@ -57,7 +56,6 @@ if archivo_imagen is not None:
         st.markdown("### 📄 Texto detectado:")
         st.markdown(f'<div class="caja-texto">{texto_extraido}</div>', unsafe_allow_html=True)
         
-        # Generar archivo de audio con gTTS
         tts = gTTS(text=texto_extraido, lang='es')
         
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as fp:
