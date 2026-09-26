@@ -1,14 +1,5 @@
-/* Importar fuente moderna y clara */
+/* Importar fuente moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-
-/* Fondo general de la App usando la imagen con patrón de dibujos */
-.stApp {
-    background-image: url("fondo.jpg");
-    background-repeat: repeat;
-    background-size: 500px auto; /* Excelente tamaño para pantallas anchas y móviles */
-    background-attachment: fixed;
-    background-color: #fdfbf7;
-}
 
 /* Banner del Título Principal */
 .header-banner {
@@ -38,7 +29,7 @@
     font-weight: 500;
 }
 
-/* Etiqueta / Encabezado de la zona de carga */
+/* Encabezado de subida */
 .seccion-subida {
     font-size: 20px;
     font-weight: 700;
@@ -47,10 +38,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Zona de subir archivo: BARRA VERDE CLARO */
+/* BARRA VERDE CLARO DE CÁMARA / ARCHIVO */
 [data-testid="stFileUploader"] {
-    background: #e8f5e9 !important; /* Fondo Verde Claro */
-    border: 3px dashed #4caf50 !important; /* Borde Verde */
+    background: #e8f5e9 !important;
+    border: 3px dashed #4caf50 !important;
     border-radius: 20px !important;
     padding: 20px !important;
     box-shadow: 0 8px 20px rgba(76, 175, 80, 0.2) !important;
@@ -58,13 +49,10 @@
 }
 
 [data-testid="stFileUploader"]:hover {
-    background: #dedbd2 !important;
-    background-color: #d7ccc8 !important;
-    background: #c8e6c9 !important; /* Verde un poco más vivo al pasar el cursor */
+    background: #c8e6c9 !important;
     border-color: #2e7d32 !important;
 }
 
-/* Botón Upload dentro de la barra verde */
 [data-testid="stFileUploader"] button {
     background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%) !important;
     color: #ffffff !important;
@@ -76,7 +64,6 @@
     box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3) !important;
 }
 
-/* Texto dentro del cargador de archivos */
 [data-testid="stFileUploader"] section {
     color: #2e7d32 !important;
 }
